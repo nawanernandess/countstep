@@ -1,5 +1,7 @@
 # CountStep
 
+CountStep é uma aplicação web simples para gerar sequências numéricas. Informe o valor inicial, o valor final e o salto desejado — o CountStep exibe a contagem em ordem crescente ou decrescente automaticamente.
+
 ## Preview
 
 <p align="center">
