@@ -36,27 +36,26 @@ CountStep é uma aplicação web simples para gerar sequências numéricas. Info
 
 ## Como Rodar o Projeto
 
-Nenhuma instalação ou dependência necessária. Basta abrir o arquivo `index.html` diretamente no navegador:
+Por ser uma aplicação frontend pura (sem dependências ou build), basta abrir o arquivo diretamente no navegador:
 
-```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/contador.git
+1. Clone o repositório:
+   ```
+   git clone https://github.com/seu-usuario/countstep.git
+   ```
 
-# Acesse a pasta
-cd contador
+2. Acesse a pasta do projeto:
+   ```
+   cd countstep
+   ```
 
-# Abra no navegador
-start index.html   # Windows
-open index.html    # macOS
-xdg-open index.html # Linux
-```
+3. Abra o arquivo `index.html` no navegador
 
-Ou use a extensão **Live Server** no VS Code para servir o projeto localmente.
+> Recomendado: use a extensão **Live Server** no VS Code para recarregamento automático.
 
 ## Estrutura do Projeto
 
 ```
-contador/
+countstep/
 ├── index.html          # Estrutura da página
 ├── index.js            # Lógica da contagem
 ├── style.css           # Estilos
