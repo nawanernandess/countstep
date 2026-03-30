@@ -1,9 +1,15 @@
-let result = document.getElementById("result");
+const result = document.getElementById("result");
+const form = document.getElementById("counter-form");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  startCounter();
+});
 
 function startCounter() {
-  var start = document.getElementById("start");
-  var end = document.getElementById("end");
-  var step = document.getElementById("step");
+  const start = document.getElementById("start");
+  const end = document.getElementById("end");
+  const step = document.getElementById("step");
 
   if (step.value <= 0 && start.value.length > 0 && end.value.length > 0) {
     step.value = 1;
@@ -12,36 +18,35 @@ function startCounter() {
   detectValueError(start);
   detectValueError(end);
 
-  if (start.value.length == 0 || end.value.length == 0) {
-    return (result.innerHTML = "Preencha os campos para contar!");
+  if (start.value.length === 0 || end.value.length === 0) {
+    result.textContent = "Preencha os campos para contar!";
+    return;
   }
-
-  result.innerHTML = "Contando: ";
 
   count(start.value, end.value, step.value);
 }
 
 function count(start, end, step) {
-  var startValue = Number(start);
-  var endValue = Number(end);
-  var stepValue = Number(step);
-  var count;
+  const startValue = Number(start);
+  const endValue = Number(end);
+  const stepValue = Number(step) || 1;
+  const numbers = [];
 
-  if (startValue < endValue) {
-    for (count = startValue; count <= endValue; count += stepValue) {
-      result.innerHTML += ` ${count}, `;
+  if (startValue <= endValue) {
+    for (let i = startValue; i <= endValue; i += stepValue) {
+      numbers.push(i);
     }
   } else {
-    for (count = startValue; count >= endValue; count -= stepValue) {
-      result.innerHTML += `${count}, `;
+    for (let i = startValue; i >= endValue; i -= stepValue) {
+      numbers.push(i);
     }
   }
 
-  result.innerHTML = result.innerHTML.slice(0, -2) + ".";
+  result.textContent = numbers.join(", ") + ".";
 }
 
 function detectValueError(elem) {
-  if (elem.value.length == 0) {
+  if (elem.value.length === 0) {
     elem.classList.add("error");
   } else {
     elem.classList.remove("error");

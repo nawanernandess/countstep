@@ -1,51 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link
-      rel="shortcut icon"
+      rel="icon"
       href="./assets/icons/contagem.png"
       type="image/x-icon"
     />
-    <title>Contador: contagem simplificada.</title>
+    <title>CountStep: contagem simplificada.</title>
   </head>
   <body>
     <div class="container">
       <div class="content">
         <header>
-          <h1>Contador</h1>
-          <span>Contagem simples, resultados precisos</span>
+          <h1>CountStep</h1>
+          <p>Contagem simples, resultados precisos</p>
         </header>
 
-        <section class="input-data">
+        <form id="counter-form" class="input-data">
           <div class="input-group">
-            <span>
-              <p>Inicio:</p>
+            <div class="input-field">
+              <label for="start">Inicio:</label>
               <input
                 type="number"
                 name="start"
                 id="start"
                 class="input-style"
               />
-            </span>
+            </div>
 
-            <span>
-              <p>Fim:</p>
+            <div class="input-field">
+              <label for="end">Fim:</label>
               <input type="number" name="end" id="end" class="input-style" />
-            </span>
+            </div>
 
-            <span>
-              <p>Salto:</p>
+            <div class="input-field">
+              <label for="step">Salto:</label>
               <input type="number" name="step" id="step" class="input-style" />
-            </span>
+            </div>
           </div>
 
-          <button onclick="startCounter()" class="counter-result-btn">
-            Contar
-          </button>
-        </section>
+          <button type="submit" class="counter-result-btn">Contar</button>
+        </form>
 
         <section id="result" class="result">Preparando a contagem...</section>
       </div>
